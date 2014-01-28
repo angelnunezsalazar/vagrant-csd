@@ -21,8 +21,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	vb.name = "CSD"
   end
   
-  #config.vm.provision :shell, :path => "bootstrap.sh", :privileged => false
-  
   config.vm.provision :puppet do |puppet|
 	  puppet.manifests_path = "manifests"
     puppet.manifest_file = "init.pp"

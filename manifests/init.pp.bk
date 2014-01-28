@@ -8,4 +8,19 @@ exec {"update_upgrade":
 	stage => pre
 }
 
+class { "jenkins":}
+
+class { "subversion":}
+
 class { "desktop":}
+
+class { "rvm": }
+->
+class { "rvm::ruby": 
+	version => "1.9.3"
+}
+->
+class{ "rvm::gem":
+	gems => ["rspec","cucumber","sinatra"]
+}
+

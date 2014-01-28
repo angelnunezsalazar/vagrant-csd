@@ -1,4 +1,4 @@
-class rvm_ruby{
+class rvm{
 	Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
 	
 	exec {"install rvm":
