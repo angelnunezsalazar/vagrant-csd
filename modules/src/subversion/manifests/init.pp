@@ -1,10 +1,4 @@
 #https://github.com/ghoneycutt/puppet-svn
-#http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=Subversion_Apache
-#https://ubuntulife.wordpress.com/2007/05/29/instalar-un-servidor-de-subversion-en-ubuntu/
-#http://stackoverflow.com/questions/17508081/installing-a-puppet-module-from-a-manifest-script
-#http://my.safaribooksonline.com/book/-/9781849515382/applications/ch07lvl1sec02 Ejemplo de Apache Puppet
-
-#command => "sudo -H -u www-data svnadmin create /home/svn/defaultrepo",
 
 class subversion{
 	Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
