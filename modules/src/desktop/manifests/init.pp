@@ -3,7 +3,7 @@ class desktop{
     ensure => present
   }
 	->
-	exec {"chown vagrant:vagrant /home/vagrant/.Xauthority":
+	exec {"chown vagrant:vagrant /home/vagrant/.ICEauthority":
 		path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ]
 	}	
 }

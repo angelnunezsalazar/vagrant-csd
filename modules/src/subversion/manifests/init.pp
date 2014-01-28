@@ -9,7 +9,7 @@
 class subversion{
 	Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
 	
-	$repositories_path = "/home/svn/"
+	$repositories_path = "/srv/svn/"
 	$default_repository_name="csd"
 	$default_user_name_password="vagrant"
 	
