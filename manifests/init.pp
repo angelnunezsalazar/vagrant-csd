@@ -1,16 +1,4 @@
-stage { "pre":
-  before => Stage["main"],
-}
 
-class upgrade_system{
-	exec {"apt-get update && apt-get -y upgrade":
-		path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ],
-	}
-}
-
-class { "upgrade_system":
-	stage => pre
-}
 
 class { "jenkins":}
 

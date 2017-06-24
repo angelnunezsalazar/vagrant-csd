@@ -17,7 +17,7 @@ class subversion{
 	
 	group { "subversion":
 		ensure => present
-  }
+  	}
 	
 	exec {"add vagrant to subversion":
 		unless => "grep -q 'subversion\\S*vagrant' /etc/group",
@@ -38,9 +38,13 @@ class subversion{
 		notify => Service["apache2"],
 	}
 	
+	package {"apache2-utils":
+		ensure => present
+	}
+
 	exec { 'add default user':
 	  command     => "htpasswd -c -b /etc/apache2/dav_svn.passwd ${default_user_name_password} ${default_user_name_password}",
-		require => Class["apache"]
+		require => [Class["apache"], Package["apache2-utils"]]
 	}
 
 	exec { 'create default repository':
